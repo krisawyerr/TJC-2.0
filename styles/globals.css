@@ -248,6 +248,7 @@
 
 .aaa img {
   margin-right: 25px;
+  border-radius: 0.5rem; 
 }
 
 .bbb {

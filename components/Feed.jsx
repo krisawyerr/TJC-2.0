@@ -43,6 +43,9 @@ const Feed = () => {
       (item) =>
         regex.test(item.creator.username) ||
         regex.test(item.tag) ||
+        regex.test(item.content) ||
+        regex.test(item.firstName) ||
+        regex.test(item.lastName) ||
         regex.test(item.prompt)
     );
   };
