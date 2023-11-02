@@ -33,7 +33,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   return (
-    <div className='prompt_card' onClick={handleViewPost}>
+    /* <div className='prompt_card' onClick={handleViewPost}>
       <div className='flex justify-between items-start gap-5'>
         <div
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
@@ -65,6 +65,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             </p>
           </div>
         </div>
+        
 
         <div className='copy_btn hover_opacity' onClick={(event) => {
         event.stopPropagation();
@@ -82,7 +83,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
         </div>
       </div>
-
+      <img src={post.photo} style={{ height: 100, margin: 'auto' }} />  
       <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
       <p
         className='font-inter text-sm blue_gradient cursor-pointer hover_opacity min_width'
@@ -116,6 +117,20 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           </p>
         </div>
       )}
+    </div> */
+
+    <div className='aaa'  onClick={handleViewPost}>
+      <div className="ddd">
+        <img src={post.photo}/>
+      </div>
+      <div className="bbb">
+        <div>
+          <h1>{post.prompt}</h1>
+          <h2 className="min_width" onClick={(event) => {event.stopPropagation();handleProfileClick()}}>By {post.firstName} {post.lastName}</h2>
+          <p>{post.content.slice(0,100) + "..."}</p>
+        </div>
+        <p className="ccc min_width" onClick={(event) => {event.stopPropagation(); handleTagClick(post.tag)}}>#{post.tag}</p>        
+      </div>
     </div>
   );
 };
