@@ -10,6 +10,12 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Travel Journal Collective</title>
+            <link rel="icon" href="/assets/images/Screenshot__40_-removebg-preview.png" type="image/x-icon"></link> 
+        </head>
         <body>
             <Provider>
                 <div className='main'>
