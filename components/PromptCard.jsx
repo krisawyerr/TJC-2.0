@@ -33,91 +33,6 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   return (
-    /* <div className='prompt_card' onClick={handleViewPost}>
-      <div className='flex justify-between items-start gap-5'>
-        <div
-          className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
-        >
-          <Image
-            src={post.creator.image}
-            alt='user_image'
-            width={40}
-            height={40}
-            className='rounded-full object-contain hover_opacity min_width'
-            onClick={(event) => {
-              event.stopPropagation();
-              handleProfileClick();
-            }}
-          />
-
-          <div className='flex flex-col'>
-            <h3 className='font-satoshi font-semibold text-gray-900 hover_opacity min_width' onClick={(event) => {
-          event.stopPropagation();
-          handleProfileClick();
-        }}>
-              {post.creator.username}
-            </h3>
-            <p className='font-inter text-sm text-gray-500 hover_opacity min_width' onClick={(event) => {
-          event.stopPropagation();
-          handleProfileClick();
-        }}>
-              {post.creator.email}
-            </p>
-          </div>
-        </div>
-        
-
-        <div className='copy_btn hover_opacity' onClick={(event) => {
-        event.stopPropagation();
-        handleCopy();
-      }}>
-          <Image
-            src={
-              copied === post.prompt
-                ? "/assets/icons/tick.svg"
-                : "/assets/icons/copy.svg"
-            }
-            alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
-            width={12}
-            height={12}
-          />
-        </div>
-      </div>
-      <img src={post.photo} style={{ height: 100, margin: 'auto' }} />  
-      <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
-      <p
-        className='font-inter text-sm blue_gradient cursor-pointer hover_opacity min_width'
-        onClick={(event) => {
-          event.stopPropagation();
-          handleTagClick(post.tag);
-        }}
-      >
-        #{post.tag}
-      </p>
-
-      {session?.user.id === post.creator._id && pathName === "/profile" && (
-        <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
-          <p
-            className='font-inter text-sm green_gradient cursor-pointer hover_opacity min_width'
-            onClick={(event) => {
-              event.stopPropagation();
-              handleEdit();
-            }}
-          >
-            Edit
-          </p>
-          <p
-            className='font-inter text-sm orange_gradient cursor-pointer hover_opacity min_width'
-            onClick={(event) => {
-              event.stopPropagation();
-              handleDelete();
-            }}
-          >
-            Delete
-          </p>
-        </div>
-      )}
-    </div> */
 
     <div className='aaa'  onClick={handleViewPost}>
       <div className="hhh">
@@ -128,7 +43,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           <div>
             <h1 className="zzz">{post.prompt}</h1>
             <h2 className="min_width" onClick={(event) => {event.stopPropagation();handleProfileClick()}}>By {post.firstName} {post.lastName}</h2>
-            <p className="zzz">{post.content.slice(0,100) + "..."}</p>
+            <p className="zzz">{post.content.slice(0,70) + "..."}</p>
           </div>
           <p className="ccc min_width" onClick={(event) => {event.stopPropagation(); handleTagClick(post.tag)}}>#{post.tag}</p>        
         </div>

@@ -338,10 +338,17 @@
 }
 
 .eee {
-  display: flex;
+  display: grid;
   gap: 10px;
-  flex-direction: column;
-  align-items: center;
+  grid-template-columns: 1fr 1fr; 
+}
+@media screen and (max-width: 1280px) {
+  .eee {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .ggg {
@@ -387,4 +394,10 @@
 }
 .zzz {
   color: var(--text-color);
+}
+
+@media screen and (max-width: 394px) {
+  .nameTooSmall {
+    font-size: xx-large;
+  }
 }

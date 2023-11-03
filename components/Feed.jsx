@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
@@ -30,7 +29,7 @@ const Feed = () => {
     const response = await fetch("/api/prompt");
     const data = await response.json();
 
-    setAllPosts(data);
+    setAllPosts(data.reverse()); // Reverse the order of the posts
   };
 
   useEffect(() => {
@@ -82,17 +81,19 @@ const Feed = () => {
         />
       </form>
       <div>
-        {/* All Prompts */}
+        {/* All Prompts in reverse order */}
         {searchText ? (
           <PromptCardList
-            data={searchedResults}
+            data={searchedResults.reverse()}  // Reverse the order here
             handleTagClick={handleTagClick}
           />
         ) : (
-          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+          <PromptCardList
+            data={allPosts.reverse()}  // Reverse the order here
+            handleTagClick={handleTagClick}
+          />
         )}
       </div>
-
     </section>
   );
 };
