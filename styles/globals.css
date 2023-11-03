@@ -8,6 +8,34 @@
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
 
+:root {
+  --background-color: #ffffff; 
+  --text-color: #000000;
+  --light-text-color: #7e7e7e;
+  --dark-gold: #936830;
+  --middle-gold: #AD8A4C;
+  --light-gold: #F9EF9E;
+  --hashtag-color: #0000ff;
+  --post-border-color: #D1D5DB;
+  --button-border-color: #000000;
+  --button-background-color:#000000;
+  --button-text-color: #ffffff;
+}
+
+/* :root {
+  --background-color: #000000; 
+  --text-color: #ffffff; 
+  --light-text-color: #818181;
+  --dark-gold: #69A7CF; 
+  --middle-gold: #5285B3; 
+  --light-gold: #061060; 
+  --hashtag-color: #FFFF00; 
+  --post-border-color: #2E2A24; 
+  --button-border-color: #ffffff; 
+  --button-background-color: #ffffff;
+  --button-text-color: #000000;
+}
+ */
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -18,8 +46,9 @@
   pointer-events: none;
 }
 
+
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  background: var(--background-color);
   position: absolute;
   content: "";
   z-index: 2;
@@ -30,7 +59,6 @@
 
 .main:after {
   content: "";
-  background-image: url("/assets/images/grid.svg");
   z-index: 1;
   position: absolute;
   width: 100%;
@@ -40,30 +68,6 @@
   filter: invert(1);
 }
 
-.gradient {
-  height: fit-content;
-  z-index: 3;
-  width: 100%;
-  max-width: 640px;
-  background-image: radial-gradient(
-      at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
-    ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  filter: blur(100px) saturate(150%);
-  top: 80px;
-  opacity: 0.15;
-}
 
 @media screen and (max-width: 640px) {
   .main {
@@ -78,43 +82,76 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border py-1.5 px-5 transition-all text-center text-sm font-inter flex items-center justify-center;
+  border-color: var(--button-border-color);
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}
+.black_btn:hover {
+  border-color: var(--button-border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border py-1.5 px-5 transition-all text-center text-sm font-inter flex items-center justify-center;
+  border-color: var(--button-border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.outline_btn:hover {
+  border-color: var(--button-border-color);
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] sm:text-6xl;
+  color: var(--text-color)
 }
+
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  background: linear-gradient(to right, var(--dark-gold), var(--middle-gold), var(--light-gold), var(--middle-gold), var(--dark-gold));
+  background-clip: text;
+  color: transparent;
+
 }
 
-.green_gradient {
-  @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
+.edit_button {
+  color: #199700;
+}
+
+.delete_button {
+  color: #a70000;
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  background: linear-gradient(to right, var(--dark-gold), var(--middle-gold), var(--light-gold), var(--middle-gold), var(--dark-gold));
+  background-clip: text;
+  color: transparent;
+
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-5 text-lg sm:text-xl max-w-2xl;
+  color: var(--light-text-color);
 }
 
 .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-md border py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  background-color: var(--background-color);
+  border-color: var(--post-border-color);
 }
-
-.copy_btn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+.search_input:focus {
+  @apply focus:outline-none focus:ring-0;
+  border-color: var(--button-border-color);
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  border-color: var(--post-border-color);
+  background-color: var(--background-color);
 }
 
 .prompt_layout {
@@ -128,29 +165,47 @@
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm outline-0;
+  color: var(--light-text-color)
+}
+.form_textarea::placeholder {
+  color: var(--light-text-color)
 }
 
 .form_input {
-  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg mt-2 p-3 text-sm outline-0;
+  color: var(--light-text-color)
+}
+.form_input::placeholder {
+  color: var(--light-text-color)
 }
 
 /* Nav Component */
-.logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+@media screen and (max-width: 660px) {
+  .logo_textImg {
+    display: none;
+  }
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  background-color: var(--background-color);
+  border: var(--button-border-color) 1px solid;
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-sm font-inter font-medium;
+  color: var(--text-color);
+}
+.dropdown_link:hover {
+  color: var(--light-text-color);
 }
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  border-color: var(--post-border-color);
+  background-color: var(--background-color)
 }
 
 .flex-center {
@@ -210,13 +265,15 @@
   flex: 1 1 0%; 
   border-radius: 0.5rem; 
   border-width: 1px; 
-  border-color: #D1D5DB; 
+  border-color: var(--post-border-color); 
   width: 600px;
   height: 200px; 
   background-clip: padding-box;  
   display: flex;
+  flex-direction: column;
   padding: 25px;
   cursor: pointer;
+  background-color: var(--background-color);
 }
 
 @media screen and (max-width: 612px) {
@@ -262,7 +319,7 @@
   font-size: larger;
 }
 .bbb h2, .ccc  {
-  color: blue;
+  color: var(--hashtag-color);
 }
 .bbb h2:hover, .ccc:hover  {
   opacity: 0.5;
@@ -301,4 +358,33 @@
   .ggg {
     grid-template-columns: 1fr;
   }
+}
+.hhh {
+  display: flex;
+}
+.iii {
+  border: none;
+  height: 1px; 
+  background-color: var(--background-color); 
+  margin: 20px 0;
+}
+.jjj {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.formcolor {
+  color: var(--text-color)
+}
+.formcolor1 {
+  color: var(--light-text-color)
+}
+.formcolor2 {
+  color: var(--button-text-color)
+}
+.formcolor3 {
+  background: linear-gradient(to right, var(--dark-gold), var(--middle-gold), var(--dark-gold));
+}
+.zzz {
+  color: var(--text-color);
 }

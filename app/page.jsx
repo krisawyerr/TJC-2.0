@@ -4,11 +4,11 @@ const Home = () => {
   return (
     <section className="w-full flex-center flex-col">
         <h1 className='head_text text-center'>
-            Discover & Share
+            Uncover and Share 
             <br className='max-md:hidden' />
-            <span className='orange_gradient text-center'> AI-Powered Prompts</span>
+            <span className='orange_gradient text-center'>Fascinating Travel Blogs</span>
         </h1>
-        <p className='desc text-center'>Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts</p>
+        <p className='desc text-center'>Travel Journal Collective is an open platform designed for the modern wanderer, offering a creative space to discover, craft, and share captivating travel stories</p>
         <Feed />
     </section>
   )

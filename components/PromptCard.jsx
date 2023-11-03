@@ -120,17 +120,28 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     </div> */
 
     <div className='aaa'  onClick={handleViewPost}>
-      <div className="ddd">
-        <img src={post.photo}/>
-      </div>
-      <div className="bbb">
-        <div>
-          <h1>{post.prompt}</h1>
-          <h2 className="min_width" onClick={(event) => {event.stopPropagation();handleProfileClick()}}>By {post.firstName} {post.lastName}</h2>
-          <p>{post.content.slice(0,100) + "..."}</p>
+      <div className="hhh">
+        <div className="ddd">
+          <img src={post.photo}/>
         </div>
-        <p className="ccc min_width" onClick={(event) => {event.stopPropagation(); handleTagClick(post.tag)}}>#{post.tag}</p>        
+        <div className="bbb">
+          <div>
+            <h1 className="zzz">{post.prompt}</h1>
+            <h2 className="min_width" onClick={(event) => {event.stopPropagation();handleProfileClick()}}>By {post.firstName} {post.lastName}</h2>
+            <p className="zzz">{post.content.slice(0,100) + "..."}</p>
+          </div>
+          <p className="ccc min_width" onClick={(event) => {event.stopPropagation(); handleTagClick(post.tag)}}>#{post.tag}</p>        
+        </div>
       </div>
+      {session?.user.id === post.creator?._id && pathName === "/profile" && (
+        <div className="iii">
+          <hr />
+          <div className="jjj">
+            <p className='font-inter text-sm edit_button cursor-pointer hover_opacity min_width' onClick={(event) => { event.stopPropagation(); handleEdit(); }} >Edit</p>
+            <p className='font-inter text-sm delete_button cursor-pointer hover_opacity min_width' onClick={(event) => { event.stopPropagation(); handleDelete(); }} >Delete</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
