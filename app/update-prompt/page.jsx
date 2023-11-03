@@ -10,7 +10,7 @@ const EditPrompt = () => {
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
-  const [post, setPost] = useState({ prompt: "", tag: "", firstName: "", lastName: "", content: "", photo: "", });
+  const [post, setPost] = useState({ prompt: "", tag: "", firstName: "", lastName: "", content: "", photo: "", creator: "", });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const EditPrompt = () => {
         lastName: data.lastName,
         content: data.content,
         photo: data.photo,
+        creator: data.creator,
       });
     };
 
@@ -47,6 +48,7 @@ const EditPrompt = () => {
           lastName: post.lastName,
           content: post.content,
           photo: post.photo,
+          creator: post.creator,
         }),
       });
 
