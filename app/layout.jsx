@@ -28,6 +28,8 @@ const RootLayout = ({ children }) => {
             </Provider>
         </body>
     </html>
+
+    
   )
 }
 
