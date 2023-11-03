@@ -89,7 +89,7 @@ const Feed = () => {
           />
         ) : (
           <PromptCardList
-            data={allPosts.reverse()}  // Reverse the order here
+            data={allPosts}  // Reverse the order here
             handleTagClick={handleTagClick}
           />
         )}
